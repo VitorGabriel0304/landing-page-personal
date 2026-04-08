@@ -5,312 +5,473 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Enzo Nunes · Personal Trainer</title>
 <link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800;1,900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- GRAIN -->
 <div class="grain"></div>
-<canvas id="bgCanvas"></canvas>
 
 <!-- HEADER -->
-<header class="header" id="header">
-  <div class="container hd">
-    <a class="logo" href="#inicio">ENZO<span>.</span>NUNES</a>
+<header id="header">
+  <div class="hd-inner">
+    <a class="logo" href="#inicio">EN<span>/</span></a>
 
-    <nav class="nav" id="nav">
-      <a href="#sobre"      onclick="closeMenu()">Sobre</a>
-      <a href="#metodo"     onclick="closeMenu()">Método</a>
-      <a href="#resultados" onclick="closeMenu()">Resultados</a>
-      <a href="#planos"     onclick="closeMenu()">Planos</a>
-      <a href="#faq"        onclick="closeMenu()">FAQ</a>
-      <button class="nav-cta" onclick="whatsapp('Quero começar');closeMenu()">
-        Começar agora
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+    <nav id="nav">
+      <a href="#sobre"       onclick="closeMenu()">Sobre</a>
+      <a href="#metodo"      onclick="closeMenu()">Método</a>
+      <a href="#resultados"  onclick="closeMenu()">Resultados</a>
+      <a href="#planos"      onclick="closeMenu()">Planos</a>
+      <a href="#faq"         onclick="closeMenu()">FAQ</a>
     </nav>
 
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="hd-right">
+      <button class="hd-cta" onclick="whatsapp('Quero começar')">COMEÇAR AGORA</button>
+      <button class="burger" id="burger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+<div class="nav-shade" id="navShade" onclick="closeMenu()"></div>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero-bg-word">SHAPE</div>
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section id="inicio" class="hero">
 
-  <div class="container hero-inner">
-    <div class="hero-left">
-      <div class="hero-tag">
-        <span class="tag-pulse"></span>
-        Vagas abertas · Início imediato
-      </div>
-      <h1>
-        SEU CORPO<br>
-        <em>REDEFINIDO</em><br>
-        <span class="h1-light">SEM DESCULPA.</span>
-      </h1>
-      <p class="hero-sub">Treino individualizado, progressão real e acompanhamento direto. Para quem quer resultado de verdade — não mais um plano genérico.</p>
-      <div class="hero-actions">
-        <button class="btn-gold" onclick="whatsapp('Quero começar agora')">
-          QUERO COMEÇAR
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <button class="btn-ghost" onclick="scrollToSection('planos')">Ver planos</button>
-      </div>
-      <div class="hero-nums">
-        <div class="hn"><b>+500</b><span>alunos</span></div>
-        <div class="hn-div"></div>
-        <div class="hn"><b>5 anos</b><span>experiência</span></div>
-        <div class="hn-div"></div>
-        <div class="hn"><b>98%</b><span>satisfação</span></div>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="photo-wrap">
-        <div class="photo-glow"></div>
-        <div class="photo-border-frame"></div>
-        <div class="photo-img-wrap">
-          <img src="assets/img/PersonalEnzoNunes.jpeg" alt="Enzo Nunes Personal Trainer">
-        </div>
-        <div class="photo-chip chip1">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          CREF Certificado
-        </div>
-        <div class="photo-chip chip2">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Resultado em 30d
-        </div>
-      </div>
-    </div>
+  <!-- fundo: foto com overlay brutal -->
+  <div class="hero-photo-bg">
+    <img src="assets/img/PersonalEnzoNunes.jpeg" alt="">
+    <div class="hero-photo-overlay"></div>
   </div>
 
-  <div class="scroll-cue">
+  <!-- linha diagonal decorativa -->
+  <div class="hero-slash"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-top-tag">
+      <span class="blink-dot"></span>
+      <span>VAGAS ABERTAS · INÍCIO IMEDIATO</span>
+    </div>
+
+    <h1 class="hero-h1">
+      <span class="line-wrap"><span class="reveal-line">SEU CORPO</span></span>
+      <span class="line-wrap gold-line"><span class="reveal-line">NÃO MENTE.</span></span>
+      <span class="line-wrap thin-line"><span class="reveal-line">SUA DESCULPA SIM.</span></span>
+    </h1>
+
+    <p class="hero-p reveal-up">
+      Treino individualizado. Progressão real.<br>
+      Sem protocolo genérico. Sem enrolação.
+    </p>
+
+    <div class="hero-btns reveal-up" style="--d:.15s">
+      <button class="btn-raw" onclick="whatsapp('Quero começar agora')">
+        QUERO COMEÇAR
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn-line" onclick="scrollTo('planos')">VER PLANOS</button>
+    </div>
+
+    <div class="hero-kpis reveal-up" style="--d:.25s">
+      <div class="kpi"><b>+500</b><span>ALUNOS</span></div>
+      <div class="kpi-sep">/</div>
+      <div class="kpi"><b>5 ANOS</b><span>EXPERIÊNCIA</span></div>
+      <div class="kpi-sep">/</div>
+      <div class="kpi"><b>98%</b><span>SATISFAÇÃO</span></div>
+    </div>
+
+  </div>
+
+  <!-- scroll indicator -->
+  <div class="hero-scroll">
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
     <span>SCROLL</span>
-    <div class="scroll-bar"></div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════
+     MARQUEE
+══════════════════════════════════════ -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>HIPERTROFIA</span><span class="dot">·</span>
+    <span>EMAGRECIMENTO</span><span class="dot">·</span>
+    <span>PERFORMANCE</span><span class="dot">·</span>
+    <span>FORÇA</span><span class="dot">·</span>
+    <span>FOCO</span><span class="dot">·</span>
+    <span>DISCIPLINA</span><span class="dot">·</span>
+    <span>RESULTADO REAL</span><span class="dot">·</span>
+    <span>HIPERTROFIA</span><span class="dot">·</span>
+    <span>EMAGRECIMENTO</span><span class="dot">·</span>
+    <span>PERFORMANCE</span><span class="dot">·</span>
+    <span>FORÇA</span><span class="dot">·</span>
+    <span>FOCO</span><span class="dot">·</span>
+    <span>DISCIPLINA</span><span class="dot">·</span>
+    <span>RESULTADO REAL</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SOBRE
+══════════════════════════════════════ -->
+<section id="sobre" class="sobre">
+  <div class="wrap">
+
+    <div class="sobre-photo-col">
+      <div class="sobre-photo-frame" data-reveal>
+        <img src="assets/img/PersonalEnzoNunes.jpeg" alt="Enzo Nunes">
+        <div class="sobre-photo-tint"></div>
+        <div class="sobre-photo-border"></div>
+        <div class="sobre-number-tag">
+          <span>N°001</span>
+          <span>PERSONAL TRAINER</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sobre-copy" data-reveal>
+      <div class="eyebrow">— QUEM É</div>
+      <h2 class="sec-h2">TREINAMENTO<br><em>DE ELITE.</em><br><span class="h2-thin">SEM CONVERSA.</span></h2>
+
+      <p>Chega de treino copiado da internet. Chega de planilha genérica que qualquer um tem. Você merece uma estratégia construída pra <strong>você</strong> — seu biotipo, sua rotina, seu objetivo.</p>
+      <p>Mais de 5 anos transformando corpos reais com método, dados e acompanhamento de verdade. Não é personal de academia. É consultoria de performance.</p>
+
+      <div class="cert-row">
+        <div class="cert">CREF ATIVO</div>
+        <div class="cert">HIPERTROFIA</div>
+        <div class="cert">FUNCIONAL</div>
+      </div>
+
+      <button class="btn-raw sm" onclick="whatsapp('Quero saber mais sobre o treino')">
+        FALAR COM ENZO
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- numbers strip -->
+  <div class="numbers-strip">
+    <div class="ns-item" data-reveal>
+      <span class="ns-num" data-count="500">0</span>
+      <span class="ns-plus">+</span>
+      <span class="ns-label">ALUNOS<br>ATENDIDOS</span>
+    </div>
+    <div class="ns-div"></div>
+    <div class="ns-item" data-reveal>
+      <span class="ns-num" data-count="5">0</span>
+      <span class="ns-plus">K+</span>
+      <span class="ns-label">TREINOS<br>ENTREGUES</span>
+    </div>
+    <div class="ns-div"></div>
+    <div class="ns-item" data-reveal>
+      <span class="ns-num" data-count="98">0</span>
+      <span class="ns-plus">%</span>
+      <span class="ns-label">TAXA DE<br>SATISFAÇÃO</span>
+    </div>
+    <div class="ns-div"></div>
+    <div class="ns-item" data-reveal>
+      <span class="ns-num" data-count="5">0</span>
+      <span class="ns-plus">+</span>
+      <span class="ns-label">ANOS DE<br>EXPERIÊNCIA</span>
+    </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="container sobre-grid">
-    <div class="sobre-left">
-      <div class="sec-eyebrow">Quem é</div>
-      <h2 class="sec-h2">TREINADOR.<br><em>ESTRATEGISTA.</em><br>RESULTADO.</h2>
-      <p>Com mais de 5 anos atuando com emagrecimento, hipertrofia e performance, desenvolvi um método baseado em dados e evolução constante — não em achismo ou protocolo padrão.</p>
-      <p>Cada aluno recebe uma estratégia única, montada do zero, com acompanhamento real semana a semana.</p>
-      <div class="certs">
-        <div class="cert-tag">CREF Ativo</div>
-        <div class="cert-tag">Especialista Hipertrofia</div>
-        <div class="cert-tag">Treinamento Funcional</div>
-      </div>
+<!-- ══════════════════════════════════════
+     MÉTODO
+══════════════════════════════════════ -->
+<section id="metodo" class="metodo">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="eyebrow">— COMO FUNCIONA</div>
+      <h2 class="sec-h2">O MÉTODO<br><em>EM 6 FASES.</em></h2>
     </div>
-    <div class="sobre-right">
-      <div class="bs-card" data-reveal>
-        <span class="bs-n">500<sup>+</sup></span>
-        <span class="bs-l">Alunos atendidos</span>
-      </div>
-      <div class="bs-card" data-reveal>
-        <span class="bs-n">5k<sup>+</sup></span>
-        <span class="bs-l">Treinos entregues</span>
-      </div>
-      <div class="bs-card gold" data-reveal>
-        <span class="bs-n">98<sup>%</sup></span>
-        <span class="bs-l">Taxa de satisfação</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MÉTODO -->
-<section class="metodo" id="metodo">
-  <div class="container">
-    <div class="sec-eyebrow center">Como funciona</div>
-    <h2 class="sec-h2 center">O MÉTODO</h2>
-    <div class="steps-grid">
+    <div class="steps">
+
       <div class="step" data-reveal>
-        <div class="step-n">01</div>
-        <h3>Avaliação Inicial</h3>
-        <p>Análise completa do seu histórico, objetivos e disponibilidade. Nada genérico.</p>
+        <div class="step-left">
+          <div class="step-n">01</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>AVALIAÇÃO TOTAL</h3>
+          <p>Análise do seu histórico físico, lesões, objetivos e rotina real. Sem formulário genérico — uma conversa de verdade antes de qualquer treino.</p>
+        </div>
       </div>
+
       <div class="step" data-reveal>
-        <div class="step-n">02</div>
-        <h3>Montagem do Plano</h3>
-        <p>Planilha 100% personalizada: exercícios, séries, cargas e progressão semana a semana.</p>
+        <div class="step-left">
+          <div class="step-n">02</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>PLANILHA DO ZERO</h3>
+          <p>Periodização construída pra você. Exercícios, séries, tempo de descanso, progressão de carga semana a semana. Nada copiado.</p>
+        </div>
       </div>
+
       <div class="step" data-reveal>
-        <div class="step-n">03</div>
-        <h3>Execução com Suporte</h3>
-        <p>Acesso direto via WhatsApp para tirar dúvidas, ajustar cargas e corrigir execuções.</p>
+        <div class="step-left">
+          <div class="step-n">03</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>SUPORTE DIRETO</h3>
+          <p>WhatsApp direto comigo. Dúvida de execução, ajuste de carga, falta de tempo — respondido em até 24h. Sem assistente, sem bot.</p>
+        </div>
       </div>
+
       <div class="step" data-reveal>
-        <div class="step-n">04</div>
-        <h3>Revisão Semanal</h3>
-        <p>Check-in toda semana. Ajustes baseados na sua evolução real, não em protocolo padrão.</p>
+        <div class="step-left">
+          <div class="step-n">04</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>CHECK-IN SEMANAL</h3>
+          <p>Toda semana você manda o feedback, eu analiso os dados e ajusto o que for necessário. Evolução não é achismo — é protocolo.</p>
+        </div>
       </div>
+
       <div class="step" data-reveal>
-        <div class="step-n">05</div>
-        <h3>Análise de Resultados</h3>
-        <p>Fotos comparativas, métricas e relatório mensal de progresso com dados claros.</p>
+        <div class="step-left">
+          <div class="step-n">05</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3>RELATÓRIO MENSAL</h3>
+          <p>Fotos comparativas, métricas de força e composição corporal. Você vê em números o quanto evoluiu. Transparência total.</p>
+        </div>
       </div>
+
       <div class="step step-gold" data-reveal>
-        <div class="step-n">06</div>
-        <h3>Consultoria Premium</h3>
-        <p>Treino + orientação nutricional + estratégia de periodização. Nível elite.</p>
+        <div class="step-left">
+          <div class="step-n">06</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <div class="step-badge">PREMIUM</div>
+          <h3>CONSULTORIA ELITE</h3>
+          <p>Treino + orientação nutricional + estratégia de periodização avançada. Para quem quer o topo sem margem pra erro.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- RESULTADOS -->
-<section class="resultados" id="resultados">
-  <div class="container">
-    <div class="sec-eyebrow center">Prova real</div>
-    <h2 class="sec-h2 center">QUEM JÁ MUDOU</h2>
-    <div class="depo-grid">
+<!-- ══════════════════════════════════════
+     RESULTADOS
+══════════════════════════════════════ -->
+<section id="resultados" class="resultados">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="eyebrow">— PROVA REAL</div>
+      <h2 class="sec-h2">QUEM JÁ<br><em>TRANSFORMOU.</em></h2>
+    </div>
+
+    <div class="depos">
+
       <div class="depo" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>"Perdi 12kg em 3 meses seguindo o plano do Enzo. Nunca achei que conseguiria com minha rotina corrida."</p>
-        <div class="depo-who">
-          <div class="av">M</div>
-          <div><b>Mariana R.</b><span>Emagrecimento · 3 meses</span></div>
+        <div class="depo-head">
+          <div class="depo-av">M</div>
+          <div>
+            <strong>MARIANA R.</strong>
+            <span>Emagrecimento · 3 meses</span>
+          </div>
+          <div class="depo-stars">★★★★★</div>
         </div>
+        <p>"Perdi 12kg em 3 meses. Não foi fácil, mas o Enzo me deu estrutura real e não deixou eu desistir. Diferente de tudo que tentei antes."</p>
+        <div class="depo-result-tag">−12kg em 90 dias</div>
       </div>
+
       <div class="depo" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>"Ganhei 8kg de massa em 6 meses. O acompanhamento semanal faz toda a diferença. Vale cada centavo."</p>
-        <div class="depo-who">
-          <div class="av">G</div>
-          <div><b>Gabriel T.</b><span>Hipertrofia · 6 meses</span></div>
+        <div class="depo-head">
+          <div class="depo-av">G</div>
+          <div>
+            <strong>GABRIEL T.</strong>
+            <span>Hipertrofia · 6 meses</span>
+          </div>
+          <div class="depo-stars">★★★★★</div>
         </div>
+        <p>"8kg de massa em 6 meses. O check-in semanal mudou tudo — sabia exatamente o que ajustar. Nunca tive esse nível de atenção antes."</p>
+        <div class="depo-result-tag">+8kg massa magra</div>
       </div>
+
       <div class="depo" data-reveal>
-        <div class="stars">★★★★★</div>
-        <p>"Treinei com vários personais antes. O nível de personalização do Enzo não tem comparação no mercado."</p>
-        <div class="depo-who">
-          <div class="av">F</div>
-          <div><b>Fernanda S.</b><span>Performance · 4 meses</span></div>
+        <div class="depo-head">
+          <div class="depo-av">F</div>
+          <div>
+            <strong>FERNANDA S.</strong>
+            <span>Performance · 4 meses</span>
+          </div>
+          <div class="depo-stars">★★★★★</div>
         </div>
+        <p>"Treinei com 3 personais diferentes antes do Enzo. A diferença de personalização e resultado não tem nem comparação. Não troco."</p>
+        <div class="depo-result-tag">PR em todos os lifts</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- PLANOS -->
-<section class="planos" id="planos">
-  <div class="container">
-    <div class="sec-eyebrow center">Investimento</div>
-    <h2 class="sec-h2 center">ESCOLHA SEU PLANO</h2>
-    <div class="planos-grid">
+<!-- ══════════════════════════════════════
+     PLANOS
+══════════════════════════════════════ -->
+<section id="planos" class="planos">
+  <div class="wrap">
+    <div class="sec-top center">
+      <div class="eyebrow">— INVESTIMENTO</div>
+      <h2 class="sec-h2 center">ESCOLHA<br><em>SEU PLANO.</em></h2>
+    </div>
 
-      <div class="plano" data-reveal>
-        <h3>MENSAL</h3>
-        <div class="plano-price"><sup>R$</sup><b>199</b><small>/mês</small></div>
+    <div class="plans-grid">
+
+      <!-- MENSAL -->
+      <div class="plan" data-reveal>
+        <div class="plan-header">
+          <h3>MENSAL</h3>
+          <div class="plan-price"><sup>R$</sup><b>199</b><small>/mês</small></div>
+        </div>
         <ul>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Planilha personalizada</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Suporte WhatsApp</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão mensal</li>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Revisão semanal</li>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Orientação nutricional</li>
+          <li class="y">Planilha personalizada</li>
+          <li class="y">Suporte via WhatsApp</li>
+          <li class="y">Revisão mensal</li>
+          <li class="n">Revisão semanal</li>
+          <li class="n">Orientação nutricional</li>
+          <li class="n">Consultoria premium</li>
         </ul>
-        <button onclick="whatsapp('Plano Mensal - R$199')">CONTRATAR</button>
+        <button onclick="whatsapp('Plano Mensal R$199')">CONTRATAR</button>
       </div>
 
-      <div class="plano plano-hot" data-reveal>
-        <div class="plano-badge-top">MAIS POPULAR</div>
-        <h3>TRIMESTRAL</h3>
-        <div class="plano-price"><sup>R$</sup><b>499</b><small>/3 meses</small></div>
-        <div class="economy-tag">Economia de R$98</div>
+      <!-- TRIMESTRAL -->
+      <div class="plan plan-hot" data-reveal>
+        <div class="plan-top-badge">MAIS POPULAR</div>
+        <div class="plan-header">
+          <h3>TRIMESTRAL</h3>
+          <div class="plan-price"><sup>R$</sup><b>499</b><small>/3 meses</small></div>
+          <div class="plan-save">Economia de R$98</div>
+        </div>
         <ul>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Planilha personalizada</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Suporte WhatsApp</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão semanal</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Dieta orientada</li>
-          <li class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Consultoria premium</li>
+          <li class="y">Planilha personalizada</li>
+          <li class="y">Suporte via WhatsApp</li>
+          <li class="y">Revisão semanal</li>
+          <li class="y">Dieta orientada</li>
+          <li class="n">Consultoria premium</li>
+          <li class="n">Periodização avançada</li>
         </ul>
-        <button onclick="whatsapp('Plano Trimestral - R$499')">CONTRATAR</button>
+        <button onclick="whatsapp('Plano Trimestral R$499')">CONTRATAR</button>
       </div>
 
-      <div class="plano" data-reveal>
-        <h3>ANUAL</h3>
-        <div class="plano-price"><sup>R$</sup><b>999</b><small>/ano</small></div>
-        <div class="economy-tag" style="opacity:.5">Melhor custo-benefício</div>
+      <!-- ANUAL -->
+      <div class="plan" data-reveal>
+        <div class="plan-header">
+          <h3>ANUAL</h3>
+          <div class="plan-price"><sup>R$</sup><b>999</b><small>/ano</small></div>
+          <div class="plan-save" style="opacity:.5">Melhor custo-benefício</div>
+        </div>
         <ul>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Planilha personalizada</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Suporte prioritário</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Revisão semanal</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Dieta orientada</li>
-          <li class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Consultoria premium</li>
+          <li class="y">Planilha personalizada</li>
+          <li class="y">Suporte prioritário 24h</li>
+          <li class="y">Revisão semanal</li>
+          <li class="y">Dieta orientada</li>
+          <li class="y">Consultoria premium</li>
+          <li class="y">Periodização avançada</li>
         </ul>
-        <button onclick="whatsapp('Plano Anual - R$999')">CONTRATAR</button>
+        <button onclick="whatsapp('Plano Anual R$999')">CONTRATAR</button>
       </div>
 
     </div>
-    <p class="planos-note">Sem contrato de fidelidade. Cancele a qualquer momento com 7 dias de aviso.</p>
+
+    <p class="plans-note">Sem contrato de fidelidade · Cancele com 7 dias de aviso · Acesso ao app de treino incluso</p>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container faq-inner">
-    <div>
-      <div class="sec-eyebrow">Dúvidas</div>
-      <h2 class="sec-h2">FAQ</h2>
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section id="faq" class="faq">
+  <div class="wrap faq-wrap">
+
+    <div class="faq-left">
+      <div class="eyebrow">— DÚVIDAS</div>
+      <h2 class="sec-h2">PERGUNTAS<br><em>FREQUENTES.</em></h2>
+      <p class="faq-sub">Ainda com dúvida? Me chama direto no WhatsApp.</p>
+      <button class="btn-raw sm" onclick="whatsapp('Tenho uma dúvida sobre o treino')">
+        FALAR AGORA
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
-    <div class="faq-list">
+
+    <div class="faq-right">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span>O treino é presencial ou online?</span><div class="faq-ic">+</div></div>
-        <div class="faq-a">Ambos. Você escolhe a modalidade na contratação. O acompanhamento online tem a mesma qualidade do presencial — com check-ins semanais via WhatsApp e vídeo.</div>
+        <div class="faq-a">Ambos. Você escolhe na contratação. O acompanhamento online tem a mesma qualidade do presencial — check-ins semanais e suporte direto por WhatsApp e vídeo.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q"><span>Preciso ter experiência na academia?</span><div class="faq-ic">+</div></div>
-        <div class="faq-a">Não. O plano é montado para o seu nível atual. Atendo desde iniciantes absolutos até atletas de alto rendimento.</div>
+        <div class="faq-q"><span>Preciso de experiência em academia?</span><div class="faq-ic">+</div></div>
+        <div class="faq-a">Zero. O plano é montado para o seu nível. Atendo iniciantes absolutos e atletas de alto rendimento com a mesma seriedade.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q"><span>Como funciona o suporte via WhatsApp?</span><div class="faq-ic">+</div></div>
-        <div class="faq-a">Contato direto comigo, sem assistente. Respondo dúvidas sobre execução, cargas e planejamento em até 24h úteis.</div>
+        <div class="faq-q"><span>Como funciona o suporte?</span><div class="faq-ic">+</div></div>
+        <div class="faq-a">Contato direto comigo via WhatsApp. Sem assistente, sem bot. Respondo dúvidas de execução, ajuste de carga e estratégia em até 24h úteis.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span>Em quanto tempo vejo resultado?</span><div class="faq-ic">+</div></div>
-        <div class="faq-a">A maioria dos alunos reporta mudanças visíveis no primeiro mês — composição corporal e desempenho. Resultado real exige consistência, e o método garante isso.</div>
+        <div class="faq-a">A maioria dos alunos sente diferença no primeiro mês — em desempenho, composição e energia. Resultado real é consistência com estratégia certa.</div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q"><span>Posso cancelar quando quiser?</span><div class="faq-ic">+</div></div>
-        <div class="faq-a">Sim. Sem contrato de fidelidade. Você cancela com 7 dias de antecedência. Sem burocracia.</div>
+        <div class="faq-a">Sim. Sem fidelidade, sem contrato. Avisa com 7 dias de antecedência e pronto. Simples assim.</div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ══════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════ -->
 <section class="cta-final">
-  <div class="container">
-    <div class="cta-bg-word">AGORA</div>
-    <h2 class="sec-h2 center">PARE DE ESPERAR.<br><em>COMECE HOJE.</em></h2>
-    <p>Vagas limitadas por mês. Atendimento personalizado exige isso.</p>
-    <button class="btn-gold lg" onclick="whatsapp('Quero começar agora')">
-      FALAR COM ENZO AGORA
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <div class="cta-photo-bg">
+    <img src="assets/img/PersonalEnzoNunes.jpeg" alt="">
+    <div class="cta-overlay"></div>
+  </div>
+  <div class="cta-content wrap">
+    <div class="eyebrow">— HORA DA DECISÃO</div>
+    <h2 class="cta-h2">
+      OU VOCÊ DECIDE<br>
+      <em>HOJE.</em><br>
+      <span>OU DECIDE AMANHÃ<br>DO MESMO JEITO.</span>
+    </h2>
+    <p>Vagas limitadas. Cada novo aluno recebe atenção total — por isso não aceito todo mundo.</p>
+    <button class="btn-raw lg" onclick="whatsapp('Quero garantir minha vaga agora')">
+      GARANTIR MINHA VAGA
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
+    <p class="cta-small">Respondo em até 2h · Sem compromisso</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container ft-inner">
-    <div class="logo">ENZO<span>.</span>NUNES</div>
-    <p>Personal Trainer · CREF Ativo · Online &amp; Presencial</p>
+  <div class="ft-inner">
+    <a class="logo" href="#inicio">EN<span>/</span></a>
+    <p>Personal Trainer · CREF Ativo · Online & Presencial · Jaú, SP</p>
     <p class="ft-copy">© 2026 Enzo Nunes. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<!-- WHATSAPP -->
-<a class="wa-btn" onclick="whatsapp('Olá! Quero saber mais sobre o treino')" title="WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
-    <path d="M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.42 0 .06 5.36.06 11.98c0 2.11.55 4.16 1.59 5.97L0 24l6.21-1.63a11.93 11.93 0 0 0 5.83 1.48h.01c6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.21-3.51-8.39z"/>
+<!-- WHATSAPP FIXO -->
+<a class="wa" onclick="whatsapp('Olá! Quero saber sobre o treino')" title="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" fill="white">
+    <path d="M16.003 2.667C8.639 2.667 2.667 8.638 2.667 16c0 2.338.614 4.625 1.782 6.638L2.667 29.333l6.895-1.757A13.275 13.275 0 0 0 16.003 29.333c7.364 0 13.33-5.971 13.33-13.333S23.367 2.667 16.003 2.667zm0 24.222a10.853 10.853 0 0 1-5.527-1.511l-.396-.236-4.093 1.044 1.067-3.896-.258-.4A10.833 10.833 0 0 1 5.11 16c0-5.999 4.893-10.889 10.893-10.889S26.889 10.001 26.889 16 21.999 26.889 16.003 26.889zm5.976-8.148c-.327-.164-1.934-.955-2.233-1.063-.299-.11-.517-.163-.734.163-.218.326-.843 1.063-1.034 1.281-.19.217-.38.245-.707.081-.327-.163-1.38-.508-2.629-1.622-.972-.866-1.629-1.935-1.819-2.262-.191-.326-.021-.502.143-.664.147-.146.327-.38.49-.571.163-.19.218-.326.327-.543.11-.218.055-.408-.027-.571-.082-.163-.735-1.77-1.006-2.422-.265-.636-.534-.549-.735-.559l-.626-.011c-.217 0-.571.082-.87.408-.298.327-1.14 1.113-1.14 2.716s1.167 3.149 1.33 3.367c.163.217 2.296 3.504 5.562 4.914.778.336 1.385.537 1.858.687.781.248 1.492.213 2.054.129.626-.093 1.934-.791 2.207-1.555.272-.762.272-1.415.19-1.553-.08-.136-.298-.217-.625-.381z"/>
   </svg>
   <span>FALE COMIGO</span>
 </a>
