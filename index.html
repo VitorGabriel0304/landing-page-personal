@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Trainer</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container">
+    <div class="logo">PERSONAL<span>PRO</span></div>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio" onclick="closeMenu()">Inicio</a>
+      <a href="#beneficios" onclick="closeMenu()">Benefícios</a>
+      <a href="#metodo" onclick="closeMenu()">Método</a>
+      <a href="#planos" onclick="closeMenu()">Planos</a>
+      <button class="btn-header btn-mobile-cta" onclick="whatsapp('Quero começar');closeMenu()">Começar</button>
+    </nav>
+
+    <button class="btn-header btn-desktop-cta" onclick="whatsapp('Quero começar')">Começar</button>
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- OVERLAY -->
+<div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-grid">
+
+    <div class="hero-text">
+      <p class="hero-eyebrow">Treinamento de Elite</p>
+      <h1>Transforme seu corpo com <span>treino profissional</span></h1>
+      <p class="hero-desc">Treinos personalizados para hipertrofia, emagrecimento e performance com acompanhamento completo.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="whatsapp('Quero começar')">Começar agora</button>
+        <button class="btn-outline" onclick="scrollToSection('planos')">Ver planos</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>+500</strong><span>Alunos</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>5+</strong><span>Anos exp.</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>98%</strong><span>Satisfação</span></div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <div class="image-glow"></div>
+        <div class="image-frame">
+          <img src="assets/img/PersonalEnzoNunes.jpeg" alt="Personal Trainer">
+        </div>
+        <div class="image-badge badge-top">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Certificado CREF
+        </div>
+        <div class="image-badge badge-bot">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Online & Presencial
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="beneficios" id="beneficios">
+  <div class="container">
+    <div class="section-label">O que você ganha</div>
+    <h2>Benefícios</h2>
+    <div class="grid">
+      <div class="card"><div class="card-icon">💪</div><h3>Treino personalizado</h3><p>Planilha exclusiva para seu objetivo</p></div>
+      <div class="card"><div class="card-icon">📈</div><h3>Acompanhamento</h3><p>Evolução semanal monitorada</p></div>
+      <div class="card"><div class="card-icon">🔥</div><h3>Hipertrofia</h3><p>Ganho real de massa muscular</p></div>
+      <div class="card"><div class="card-icon">⚡</div><h3>Emagrecimento</h3><p>Perda de gordura eficiente</p></div>
+      <div class="card"><div class="card-icon">🏆</div><h3>Performance</h3><p>Melhora de força e resistência</p></div>
+      <div class="card"><div class="card-icon">💎</div><h3>Consultoria premium</h3><p>Treino + estratégia completa</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="metodo" id="metodo">
+  <div class="container">
+    <div class="section-label">Como funciona</div>
+    <h2>Método</h2>
+    <div class="metodo-grid">
+      <div class="metodo-card"><span class="metodo-num">01</span><p>Treino individual</p></div>
+      <div class="metodo-card"><span class="metodo-num">02</span><p>Progressão semanal</p></div>
+      <div class="metodo-card"><span class="metodo-num">03</span><p>Suporte direto</p></div>
+      <div class="metodo-card"><span class="metodo-num">04</span><p>Acompanhamento</p></div>
+      <div class="metodo-card"><span class="metodo-num">05</span><p>Estratégia personalizada</p></div>
+      <div class="metodo-card destaque"><span class="metodo-num">06</span><p>Consultoria premium</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="planos" id="planos">
+  <div class="container">
+    <div class="section-label">Investimento</div>
+    <h2>Planos</h2>
+    <div class="planos-grid">
+      <div class="plano">
+        <h3>Mensal</h3>
+        <div class="plano-price"><span>R$199</span><small>/mês</small></div>
+        <ul class="plano-features">
+          <li>Planilha personalizada</li>
+          <li>Suporte via WhatsApp</li>
+          <li>Revisão mensal</li>
+        </ul>
+        <button onclick="whatsapp('Plano mensal')">Contratar</button>
+      </div>
+      <div class="plano destaque">
+        <div class="plano-badge">Mais popular</div>
+        <h3>Trimestral</h3>
+        <div class="plano-price"><span>R$499</span><small>/3 meses</small></div>
+        <ul class="plano-features">
+          <li>Tudo do Mensal</li>
+          <li>Revisão semanal</li>
+          <li>Dieta orientada</li>
+        </ul>
+        <button onclick="whatsapp('Plano trimestral')">Contratar</button>
+      </div>
+      <div class="plano">
+        <h3>Anual</h3>
+        <div class="plano-price"><span>R$999</span><small>/ano</small></div>
+        <ul class="plano-features">
+          <li>Tudo do Trimestral</li>
+          <li>Consultoria premium</li>
+          <li>Prioridade total</li>
+        </ul>
+        <button onclick="whatsapp('Plano anual')">Contratar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>Pronto para mudar sua vida?</h2>
+      <p>Não espere mais. Seu melhor shape começa hoje.</p>
+      <button onclick="whatsapp('Quero começar')">FALE COMIGO AGORA</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Personal Trainer © 2026 · Todos os direitos reservados
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a class="whatsapp" onclick="whatsapp('Quero começar')">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
+    <path d="M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.42 0 .06 5.36.06 11.98c0 2.11.55 4.16 1.59 5.97L0 24l6.21-1.63a11.93 11.93 0 0 0 5.83 1.48h.01c6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.21-3.51-8.39z"/>
+  </svg>
+  <span>FALE COMIGO</span>
+</a>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
